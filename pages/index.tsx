@@ -1,6 +1,5 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import About from "../components/About";
 import Landing from "../components/Landing";
 import Projects from "../components/Projects";
@@ -21,10 +20,11 @@ type Props = {
 };
 
 export default function Home({ pageInfo, skills, projects, socials }: Props) {
+  const titleText = `Satyam's Portfolio`;
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-x-hidden z-0  scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80 scrollbar-thin pb-20">
       <Head>
-        <title>Satyam's Portfolio</title>
+        <title>{titleText}</title>
       </Head>
 
       <Header socials={socials} />

@@ -13,6 +13,7 @@ type FormValues = {
 type Props = { pageInfo: PageInfo };
 
 export default function Contact({ pageInfo }: Props) {
+  const text = `Let's talk.`;
   const { register, handleSubmit } = useForm<FormValues>();
   const onSubmit = handleSubmit((data) => {
     window.location.href = `mailto:${pageInfo?.email}?subject=${data.subject}&body=Hi, I am ${data.name}. ${data.message} (${data.email})`;
@@ -27,7 +28,7 @@ export default function Contact({ pageInfo }: Props) {
       <div className="flex flex-col space-y-5 mt-40">
         <h4 className="text-2xl font-semibold text-center">
           Enough showcasing, now{" "}
-          <span className="decoration-[#f7ab0a]/50 underline">Let's talk.</span>
+          <span className="decoration-[#f7ab0a]/50 underline">{text}</span>
         </h4>
 
         <div className="space-y-10">
