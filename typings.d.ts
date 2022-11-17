@@ -21,7 +21,7 @@ export interface PageInfo extends SanityBody {
     role: string;
     heroImage: Image;
     name: string;
-    phoneNumber: number;
+    phone: string;
     profileImage: Image;
 }
 
@@ -32,7 +32,7 @@ export interface Technology extends SanityBody {
     title: string;
 }
 
-export interface Skill extends SanityBody {
+export interface SkillType extends SanityBody {
     _type: "skill";
     image: Image;
     progress: number;
@@ -42,7 +42,7 @@ export interface Skill extends SanityBody {
 export interface Project extends SanityBody {
     title : string;
     _type: "projects";
-    Image: Image;
+    image: Image;
     linkToBuild: string;
     summary: string;
     technologies: Technology[]

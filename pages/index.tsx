@@ -6,59 +6,51 @@ import Landing from "../components/Landing";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Contact from "../components/Contact";
-import { PageInfo, Project, Skill, Social } from "../typings";
+import { PageInfo, Project, SkillType, Social } from "../typings";
 import { fetchPageInfo } from "../util/fetchPageInfo";
 import { fetchProjects } from "../util/fetchProjects";
 import { fetchSkills } from "../util/fetchSkills";
 import { fetchSocials } from "../util/fetchSocials";
+import Header from "../components/Header";
 
 type Props = {
   pageInfo: PageInfo;
-  skills: Skill[];
+  skills: SkillType[];
   projects: Project[];
   socials: Social[];
 };
 
 export default function Home({ pageInfo, skills, projects, socials }: Props) {
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80 ">
+    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-x-hidden z-0  scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80 scrollbar-thin pb-20">
       <Head>
         <title>Satyam's Portfolio</title>
       </Head>
 
+      <Header socials={socials} />
+
       <section className="snap-start" id="hero">
-        <Landing />
+        <Landing pageInfo={pageInfo} />
       </section>
       <section className="snap-center" id="about">
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
       <section className="snap-center" id="skills">
-        <Skills />
+        <Skills skills={skills} />
       </section>
       <section className="snap-start" id="projects">
-        <Projects />
+        <Projects projects={projects} />
       </section>
       <section className="snap-start" id="contact">
-        <Contact />
+        <Contact pageInfo={pageInfo} />
       </section>
-      <Link href="#hero">
-        <footer className="sticky bottom-5 w-full cursor-pointer">
-          <div className="flex items-center justify-center">
-            <img
-              src="https://i.imgur.com/e2y06A.png"
-              alt=""
-              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-            />
-          </div>
-        </footer>
-      </Link>
     </div>
   );
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
-  const skills: Skill[] = await fetchSkills();
+  const skills: SkillType[] = await fetchSkills();
   const projects: Project[] = await fetchProjects();
   const socials: Social[] = await fetchSocials();
 

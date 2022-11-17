@@ -37,7 +37,12 @@ export default {
 	  {
             name : "phone",
             title : "Phone No",
-            type : "number",
+            type : "string",
+        },
+        {
+            name : "description",
+            title : "Description",
+            type: "string",
         },
 	  {
             name : "address",

@@ -1,0 +1,56 @@
+git init
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Changes to be committed:
+#	new file:   .env.example
+#	modified:   .gitignore
+#	new file:   backend/.eslintrc
+#	new file:   backend/.npmignore
+#	new file:   backend/README.md
+#	new file:   backend/config/.checksums
+#	new file:   backend/config/@sanity/data-aspects.json
+#	new file:   backend/config/@sanity/default-layout.json
+#	new file:   backend/config/@sanity/default-login.json
+#	new file:   backend/config/@sanity/form-builder.json
+#	new file:   backend/config/@sanity/vision.json
+#	new file:   backend/package.json
+#	new file:   backend/plugins/.gitkeep
+#	new file:   backend/sanity.json
+#	new file:   backend/schemas/assets.js
+#	new file:   backend/schemas/pageInfo.js
+#	new file:   backend/schemas/projects.js
+#	new file:   backend/schemas/schema.js
+#	new file:   backend/schemas/skill.js
+#	new file:   backend/schemas/social.js
+#	new file:   backend/static/.gitkeep
+#	new file:   backend/static/favicon.ico
+#	new file:   backend/tsconfig.json
+#	new file:   backend/yarn.lock
+#	new file:   components/About.tsx
+#	new file:   components/BackgroundCircle.tsx
+#	new file:   components/Contact.tsx
+#	new file:   components/Header.tsx
+#	new file:   components/Landing.tsx
+#	new file:   components/ProjectCard.tsx
+#	new file:   components/Projects.tsx
+#	new file:   components/Skill.tsx
+#	new file:   components/Skills.tsx
+#	modified:   package.json
+#	new file:   pages/api/getPageInfo.tsx
+#	new file:   pages/api/getProjects.tsx
+#	new file:   pages/api/getSkills.tsx
+#	new file:   pages/api/getSocials.tsx
+#	modified:   pages/index.tsx
+#	new file:   postcss.config.js
+#	new file:   sanity.ts
+#	new file:   tailwind.config.js
+#	modified:   tsconfig.json
+#	new file:   typings.d.ts
+#	new file:   util/fetchPageInfo.ts
+#	new file:   util/fetchProjects.ts
+#	new file:   util/fetchSkills.ts
+#	new file:   util/fetchSocials.ts
+#	modified:   yarn.lock
+#

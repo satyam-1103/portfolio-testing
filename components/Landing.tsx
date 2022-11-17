@@ -1,25 +1,31 @@
-import React from 'react'
+import React from "react";
 import Link from "next/link";
-import {Cursor, useTypewriter} from "react-simple-typewriter";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircle from "./BackgroundCircle";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo;
+};
 
-export default function Landing({}: Props) {
-    const [text, count] = useTypewriter({words: [
-        "Hello, I' am Satyam Srivastava.",
-        "Front-end Developer",
-        "UI Designer",
-      ],
-      loop: true,
-      delaySpeed: 2000,})
+export default function Landing({ pageInfo }: Props) {
+  const [text, count] = useTypewriter({
+    words: [
+      `Hello, I' am ${pageInfo?.name}`,
+      `${pageInfo.role}`,
+      `UI Designer`,
+      `loves to drink coffee during development.`,
+    ],
+    loop: true,
+    delaySpeed: 2000,
+  });
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircle />
       <img
-        src="https://cdn.sanity.io/images/wyhw4a45/production/53fb6c3c9a22ea0235b03a0f593d66e878106a86-3888x5184.jpg"
+        src={urlFor(pageInfo?.heroImage).url()}
         alt="profile pic"
-        
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
       />
       <div className="z-20">
@@ -27,7 +33,7 @@ export default function Landing({}: Props) {
           Software Developer
         </h1>
         <h1>
-          <span>{text}</span>
+          <span className="text-2xl">{text}</span>
           <Cursor cursorColor="#fca311" />
         </h1>
 
@@ -47,5 +53,5 @@ export default function Landing({}: Props) {
         </div>
       </div>
     </div>
-  )
+  );
 }
