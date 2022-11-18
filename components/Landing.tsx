@@ -12,7 +12,7 @@ type Props = {
 export default function Landing({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
     words: [
-      `Hello, I' am ${pageInfo?.name}`,
+      `Hello, I am ${pageInfo?.name}`,
       `${pageInfo.role}`,
       `UI Designer`,
       `loves to drink coffee during development.`,
