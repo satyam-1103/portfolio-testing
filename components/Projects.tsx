@@ -45,6 +45,7 @@ export default function Projects({ projects }: Props) {
                   <a
                     href={project.linkToBuild}
                     target="_blank"
+                    rel="noreferrer"
                     className="text-gray-400/50 rounded-full transition-all duration-150 hover:text-[#f7ab0a]/60 border border-gray-500 p-3 hover:border-[#f7ab0a]/40 px-4"
                   >
                     Have a Look @Project
