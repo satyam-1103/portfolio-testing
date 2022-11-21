@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import Link from "next/link";
 import { urlFor } from "../sanity";
 import { Project } from "../typings";
 type Props = { projects: Project[] };
@@ -10,7 +11,7 @@ export default function Projects({ projects }: Props) {
         Projects
       </h3>
 
-      <div className="mt-8 relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80 md:scrollbar-thin  ">
+      <div className="mt-8 md:mt-20 relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80  ">
         {projects.map((project, i) => {
           return (
             <div
@@ -19,7 +20,7 @@ export default function Projects({ projects }: Props) {
             >
               <img
                 src={urlFor(project?.image).url()}
-                className="w-32 h-32 object-cover rounded-full"
+                className="w-32 h-32 object-cover rounded-full xl:w-40 xl:h-40 xl:rounded-lg "
               />
 
               <div className="mt-8 space-y-10 px-0 md:px-10 max-w-5xl">
@@ -29,7 +30,6 @@ export default function Projects({ projects }: Props) {
                   </span>
                   {project?.title}
                 </h4>
-
                 <div className="flex items-center justify-center space-x-3">
                   {project?.technologies.map((technology) => (
                     <img
@@ -40,8 +40,16 @@ export default function Projects({ projects }: Props) {
                     />
                   ))}
                 </div>
-
                 <p>{project?.summary}</p>
+                <div className="text-center text-xl ">
+                  <a
+                    href={project.linkToBuild}
+                    target="_blank"
+                    className="text-gray-400/50 rounded-full transition-all duration-150 hover:text-[#f7ab0a]/60 border border-gray-500 p-3 hover:border-[#f7ab0a]/40 px-4"
+                  >
+                    Have a Look @Project
+                  </a>
+                </div>
               </div>
             </div>
           );

@@ -26,7 +26,7 @@ export default function Home({ pageInfo, skills, projects, socials }: Props) {
         <title>Satyam - Portfolio</title>
       </Head>
 
-      <Header socials={socials} />
+      <Header socials={socials} pageInfo={pageInfo} />
 
       <section className="snap-start" id="hero">
         <Landing pageInfo={pageInfo} />

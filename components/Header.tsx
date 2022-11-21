@@ -1,12 +1,14 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import { Social } from "../typings";
+import { Social, PageInfo } from "../typings";
+
 type Props = {
   socials: Social[];
+  pageInfo: PageInfo;
 };
 
-export default function Header({ socials }: Props) {
+export default function Header({ socials, pageInfo }: Props) {
   return (
     <header className="flex sticky top-0 items-start justify-between max-w-5xl mx-auto z-20 xl:items-center p-5">
       <motion.div
@@ -38,6 +40,7 @@ export default function Header({ socials }: Props) {
           className="cursor-pointer"
           bgColor="transparent"
           fgColor="white"
+          url={`mailto://${pageInfo.email}`}
         />
         <p className="uppercase hidden md:inline-flex text-sm text-gray-400 ml-3">
           Contact Me
